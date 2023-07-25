@@ -13,12 +13,20 @@ body {
 .container {
   display: block;
   margin: 0 auto;
-  max-width: calc(100vw - 20rem);
+  max-width: calc(100vw - 35rem);
+}
+
+.heading {
+  margin-top: 6rem;
+}
+
+.heading h1 {
+  margin: 0;
 }
 
 textarea {
   width: 100%;
-  height: 30rem;
+  height: 20rem;
   background-color: #71627a;
   padding: 1rem;
   color: #FFF;
@@ -26,6 +34,26 @@ textarea {
 }
 
 .text-content {
-  margin-top: 8rem;
+  margin-top: 6rem;
+}
+
+.transform-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.transform-button {
+  padding: 2rem 3rem;
+  background-color: #7e1dfb;
+  border-radius: .3rem;
 }
 /*# sourceMappingURL=main.css.map */

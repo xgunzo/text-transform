@@ -8,5 +8,13 @@ body {
 .container {
     display: block;
     margin: 0 auto;
-    max-width: calc(100vw - 20rem);
+    max-width: calc(100vw - 35rem);
+}
+
+.heading {
+    margin-top: 6rem;
+
+    h1 {
+        margin: 0;
+    }
 }

@@ -1,0 +1,14 @@
+.transform {
+    &-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 2rem;
+    }
+
+    &-button {
+        padding: 2rem 3rem;
+        background-color: #7e1dfb;
+        border-radius: .3rem;
+    }
+}
