@@ -2,7 +2,18 @@
 h1 {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: 3.6rem;
+  font-size: 2.2rem;
+  letter-spacing: .8rem;
+}
+
+@media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
+  h1 {
+    font-size: 3.6rem;
+  }
+}
+
+a {
+  letter-spacing: .1rem;
 }
 
 body {
@@ -13,11 +24,23 @@ body {
 .container {
   display: block;
   margin: 0 auto;
-  max-width: calc(100vw - 35rem);
+  max-width: calc(100vw - 2rem);
+}
+
+@media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
+  .container {
+    max-width: calc(100vw - 35rem);
+  }
 }
 
 .heading {
-  margin-top: 6rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
+  .heading {
+    margin-top: 6rem;
+  }
 }
 
 .heading h1 {
@@ -25,35 +48,86 @@ body {
 }
 
 textarea {
-  width: 100%;
-  height: 20rem;
+  max-width: 100%;
+  width: -webkit-fill-available;
+  height: calc(100vh - 35rem);
   background-color: #71627a;
   padding: 1rem;
   color: #FFF;
   font-size: 1.8rem;
 }
 
+@media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
+  textarea {
+    width: 100%;
+    height: 20rem;
+  }
+}
+
 .text-content {
-  margin-top: 6rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
+  .text-content {
+    margin-top: 6rem;
+  }
 }
 
 .transform-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 2rem;
 }
 
+@media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
+  .transform-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 3rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    gap: 2rem;
+  }
+}
+
 .transform-button {
-  padding: 2rem 3rem;
+  padding: 1.5rem;
   background-color: #7e1dfb;
   border-radius: .3rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: ease-in .3s;
+  transition: ease-in .3s;
+  cursor: pointer;
+}
+
+@media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
+  .transform-button {
+    padding: 1.5rem 3rem;
+  }
+}
+
+.transform-button:hover {
+  background-color: #6423b9;
+  -webkit-transition: ease-in .3s;
+  transition: ease-in .3s;
 }
 /*# sourceMappingURL=main.css.map */

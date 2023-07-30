@@ -1,3 +1,9 @@
+@import "../utils/mixins/breakpoints";
+
 .text-content { 
-    margin-top: 6rem;
+    margin-top: 3rem;
+
+    @include media-breakpoint-up(xl) {
+        margin-top: 6rem; 
+    }
 }

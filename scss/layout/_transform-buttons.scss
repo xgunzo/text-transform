@@ -1,14 +1,41 @@
+@import "../utils/mixins/breakpoints";
+
 .transform {
     &-buttons {
-        display: flex;
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        flex-wrap: wrap;
         justify-content: space-between;
         margin-top: 2rem;
+
+        @include media-breakpoint-up(xl) {
+            display: flex;
+            flex-direction: row;
+            margin-top: 3rem;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 2rem;
+        }
     }
 
     &-button {
-        padding: 2rem 3rem;
+        padding: 1.5rem;
         background-color: #7e1dfb;
         border-radius: .3rem;
+        font-weight: 900;
+        text-align: center;
+        text-transform: uppercase;
+        transition: ease-in .3s;
+        cursor: pointer;
+
+        @include media-breakpoint-up(xl) {
+            padding: 1.5rem 3rem;
+        }
+
+        &:hover {
+            background-color: #6423b9;
+            transition: ease-in .3s;
+        }
     }
 }
