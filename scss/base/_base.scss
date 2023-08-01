@@ -11,7 +11,7 @@ body {
     margin: 0 auto;
     max-width: calc(100vw - 2rem);
 
-    @include media-breakpoint-up(xl) {
+    @media screen and (min-width: 1200px)  {
         max-width: calc(100vw - 35rem);
     }
 }
