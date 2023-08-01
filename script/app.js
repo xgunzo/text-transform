@@ -44,6 +44,12 @@ capitalizedBtn.addEventListener('click', () => {
 
 aliasBtn.addEventListener('click', () => {
     let insertedText = textArea.value
-    insertedText = insertedText.split(/,| /).join('-').replace('--', '-')
-    textArea.value = insertedText.toLowerCase()
+    insertedText = insertedText.split(/\.|,|'| /).join('-').replaceAll('--', '-')
+    if (insertedText.slice(-1) == '-') {
+        let result = insertedText.substring(0, insertedText.length - 1)
+        textArea.value = result.toLowerCase()
+    } else {
+        textArea.value = insertedText.toLowerCase()
+    }
+    
 })
