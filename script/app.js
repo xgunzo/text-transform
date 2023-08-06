@@ -5,14 +5,15 @@ let lowercaseBtn = document.querySelector('#lowercase')
 let sentenceBtn = document.querySelector('#sentence')
 let capitalizedBtn = document.querySelector('#capitalized')
 let aliasBtn = document.querySelector('#alias')
+let copyBtn = document.querySelectorAll('#copy')
 
 
 // Hover on button
 buttons.forEach((button) => {
     button.addEventListener('mousemove', (e) => {
-        const { x, y } = button.getBoundingClientRect();
-        button.style.setProperty("--x", e.clientX - x);
-        button.style.setProperty("--y", e.clientY - y);
+        const { x, y } = button.getBoundingClientRect()
+        button.style.setProperty("--x", e.clientX - x)
+        button.style.setProperty("--y", e.clientY - y)
     })
 })
 
@@ -65,4 +66,28 @@ aliasBtn.addEventListener('click', () => {
         textArea.value = insertedText.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\u0142/g, "l")
     }
     
+})
+
+let copyPopUp = document.querySelector('.copy-popup')
+
+copyBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        let insertedText = textArea.value
+        const copyContent = async () => {
+            try {
+              await navigator.clipboard.writeText(insertedText);
+              copyPopUp.classList.toggle("active")
+              setTimeout(function(){
+                copyPopUp.classList.remove('active');
+              },2500)
+            } catch (err) {
+              console.error('Failed to copy: ', err);
+              copyPopUp.innerHTML = "We can't copy this text to your clipboard :("
+              setTimeout(function(){
+                copyPopUp.classList.remove('active');
+              },2500)
+            }
+        }
+        copyContent()
+    })
 })

@@ -38,7 +38,6 @@
         }
 
         @media screen and (min-width: 1200px) {
-            padding: 1.5rem 3rem;
             &:after {
                 content: '';
                 position: absolute;
@@ -51,7 +50,9 @@
             }
         }
 
-       
+        @media screen and (min-width: 1800px) { 
+            padding: 1.5rem 3rem; 
+        }
 
         &:hover {
             background-color: #6423b9;

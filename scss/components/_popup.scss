@@ -1,0 +1,23 @@
+.copy-popup {
+    position: absolute;
+    bottom: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFF;
+    color: black;
+    border-radius: 1rem;
+    padding: 2rem 3rem;
+    width: 100%;
+    text-align: center;
+    width: 24rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: ease-in .3s;
+
+    &.active {
+        bottom: 3rem;
+        visibility: visible;
+        opacity: 1;
+        transition: ease-in .3s;
+    }
+}
