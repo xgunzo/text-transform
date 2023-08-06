@@ -1,9 +1,22 @@
 let textArea = document.querySelector('.textarea')
+let buttons = document.querySelectorAll('.transform-button')
 let uppercaseBtn = document.querySelector('#uppercase')
 let lowercaseBtn = document.querySelector('#lowercase')
 let sentenceBtn = document.querySelector('#sentence')
 let capitalizedBtn = document.querySelector('#capitalized')
 let aliasBtn = document.querySelector('#alias')
+
+
+// Hover on button
+buttons.forEach((button) => {
+    button.addEventListener('mousemove', (e) => {
+        const { x, y } = button.getBoundingClientRect();
+        button.style.setProperty("--x", e.clientX - x);
+        button.style.setProperty("--y", e.clientY - y);
+    })
+})
+
+// Listeners for transforms
 
 uppercaseBtn.addEventListener('click', () => {
     let insertedText = textArea.value

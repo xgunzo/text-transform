@@ -5,11 +5,11 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2rem;
   letter-spacing: .8rem;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   h1 {
     font-size: 3.6rem;
   }
@@ -37,7 +37,7 @@ body {
 }
 
 .heading {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 @media (min-width: breakpoint-min(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px))) {
@@ -53,11 +53,17 @@ body {
 textarea {
   max-width: 100%;
   width: -webkit-fill-available;
-  height: calc(100vh - 35rem);
+  height: calc(100vh - 30rem);
   background-color: #71627a;
   padding: 1rem;
   color: #FFF;
   font-size: 1.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  textarea {
+    height: 20rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -111,7 +117,7 @@ textarea {
 }
 
 .transform-button {
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   background-color: #7e1dfb;
   border-radius: .3rem;
   font-weight: 900;
@@ -120,11 +126,31 @@ textarea {
   -webkit-transition: ease-in .3s;
   transition: ease-in .3s;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-size: .8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .transform-button {
+    font-size: initial;
+    padding: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .transform-button {
     padding: 1.5rem 3rem;
+  }
+  .transform-button:after {
+    content: '';
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    top: calc(var(--y, 0) * .1rem - 5rem);
+    left: calc(var(--x, 0) * .1rem - 5rem);
+    opacity: 0;
+    background: radial-gradient(white, #3984ff00 80%);
   }
 }
 
@@ -132,5 +158,9 @@ textarea {
   background-color: #6423b9;
   -webkit-transition: ease-in .3s;
   transition: ease-in .3s;
+}
+
+.transform-button:hover:after {
+  opacity: .4;
 }
 /*# sourceMappingURL=main.css.map */
