@@ -147,8 +147,8 @@ textarea {
     position: absolute;
     width: 10rem;
     height: 10rem;
-    top: calc(var(--y, 0) * .1rem - 5rem);
-    left: calc(var(--x, 0) * .1rem - 5rem);
+    top: calc(var(--y, 0) * .05rem - 3rem);
+    left: calc(var(--x, 0) * .05rem - 3rem);
     opacity: 0;
     background: radial-gradient(white, #3984ff00 80%);
   }
