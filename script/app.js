@@ -47,9 +47,9 @@ aliasBtn.addEventListener('click', () => {
     insertedText = insertedText.split(/\.|,|'| /).join('-').replaceAll('--', '-')
     if (insertedText.slice(-1) == '-') {
         let result = insertedText.substring(0, insertedText.length - 1)
-        textArea.value = result.toLowerCase()
+        textArea.value = result.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\u0142/g, "l")
     } else {
-        textArea.value = insertedText.toLowerCase()
+        textArea.value = insertedText.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "").replace(/\u0142/g, "l")
     }
     
 })
